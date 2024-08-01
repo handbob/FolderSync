@@ -4,6 +4,7 @@ import pytest
 from pyfoldersync.sync import synchronize_folders
 from pyfoldersync.logger import setup_logging
 
+
 @pytest.fixture
 def setup_test_environment():
     base_dir = 'test_data'
@@ -27,6 +28,7 @@ def setup_test_environment():
     setup_logging(log_file)
 
     yield source, replica
+
 
 def test_synchronization(setup_test_environment):
     source, replica = setup_test_environment
