@@ -1,5 +1,8 @@
-from loguru import logger  # Importing logger from the loguru library for logging
-import sys  # Importing sys module to interact with the interpreter
+# Importing logger from the loguru library for logging
+from loguru import logger
+# Importing sys module to interact with the interpreter
+import sys
+
 
 def setup_logging(log_file):
     '''
@@ -8,9 +11,12 @@ def setup_logging(log_file):
     Args:
         log_file (str): The file where logs will be saved.
     '''
-    logger.remove()  # Remove the default logger configuration
-    logger.add(log_file, rotation='10 MB')  # Add a file handler with a rotation of 10 MB
-    logger.add(sys.stderr, level='INFO')  # Add a standard error handler with INFO level logging
+    # Remove the default logger configuration
+    logger.remove()
+    # Add a file handler with a rotation of 10 MB
+    logger.add(log_file, rotation='10 MB')
+    # Add a standard error handler with INFO level logging
+    logger.add(sys.stderr, level='INFO')
 
 def log_operation(message):
     '''
@@ -19,4 +25,5 @@ def log_operation(message):
     Args:
         message (str): The message to be logged.
     '''
-    logger.info(message)  # Log the provided message with INFO level
+    # Log the provided message with INFO level
+    logger.info(message)
