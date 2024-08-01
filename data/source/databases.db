@@ -1,0 +1,10 @@
+select
+    adb.id,
+    adb.carrer
+from
+    amazing_db as adb
+left join
+	user as u on adb.id = u.id
+where
+    adb.carrer = tester
+;
