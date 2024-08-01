@@ -1,6 +1,5 @@
 .DS_Store
 venv/
-.vscode/
 logs/
 .pytest_cache/
 __pycache__/
