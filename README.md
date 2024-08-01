@@ -6,10 +6,11 @@ pyfoldersync is a file synchronization tool that keeps a replica folder synchron
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Description](#descriptions)
 
 ## Requirements
 
-- [Python 3.x](https://www.python.org/)
+- [Python](https://www.python.org/)
 - [Loguru](https://loguru.readthedocs.io/en/stable/)
 - [Pytest](https://docs.pytest.org/en/stable/)
 
@@ -41,3 +42,20 @@ pyfoldersync is a file synchronization tool that keeps a replica folder synchron
     ```
     pip install -r requirements.txt
     ```
+
+## Descriptions
+
+### `utils.py`
+
+Provides a utility function for calculating the MD5 hash of a file.
+
+- **Functions**:
+  - `calculate_md5(file_path, chunk_size=4096)`: Calculates the MD5 hash of a file.
+
+### `logger.py`
+
+Sets up logging configurations and provides a function to log operations.
+
+- **Functions**:
+  - `setup_logging(log_file)`: Sets up the logging configuration.
+  - `log_operation(message)`: Logs a message with INFO level.
