@@ -66,3 +66,13 @@ Contains the core logic for synchronizing the source and replica folders.
 
 - **Functions**:
   - `synchronize_folders(source, replica)`: Synchronizes the contents of the source folder with the replica folder.
+
+### `main.py`
+
+Manages command-line arguments, logging setup, and starts the synchronization process.
+
+- **Functions**:
+  - `parse_arguments()`: Parses command-line arguments.
+  - `print_help()`: Displays the help message.
+  - `print_version()`: Displays the script version.
+  - `main()`: Sets up logging and starts the synchronization loop.
