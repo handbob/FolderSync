@@ -6,8 +6,11 @@ pyfoldersync is a file synchronization tool that keeps a replica folder synchron
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Description](#descriptions)
+- [Description](#description)
 - [Features](#features)
+- [Running Tests](#running-tests)
+- [TODO](#todo)
+- [DONE](#done)
 
 ## Requirements
 
@@ -44,14 +47,17 @@ pyfoldersync is a file synchronization tool that keeps a replica folder synchron
     pip install -r requirements.txt
     ```
 
-## Descriptions
+## Description
 
-### `utils.py`
+### `main.py`
 
-Provides a utility function for calculating the MD5 hash of a file.
+Manages command-line arguments, logging setup, and starts the synchronization process.
 
 - **Functions**:
-  - `calculate_md5(file_path, chunk_size=4096)`: Calculates the MD5 hash of a file.
+  - `parse_arguments()`: Parses command-line arguments.
+  - `print_help()`: Displays the help message.
+  - `print_version()`: Displays the script version.
+  - `main()`: Sets up logging and starts the synchronization loop.
 
 ### `logger.py`
 
@@ -68,15 +74,30 @@ Contains the core logic for synchronizing the source and replica folders.
 - **Functions**:
   - `synchronize_folders(source, replica)`: Synchronizes the contents of the source folder with the replica folder.
 
-### `main.py`
+### `test_logger.py`
 
-Manages command-line arguments, logging setup, and starts the synchronization process.
+Tests the logging setup and operations.
 
 - **Functions**:
-  - `parse_arguments()`: Parses command-line arguments.
-  - `print_help()`: Displays the help message.
-  - `print_version()`: Displays the script version.
-  - `main()`: Sets up logging and starts the synchronization loop.
+  - `setup_logger_environment()`: Sets up the logging environment for the test.
+  - `test_log_operation()`: Tests the `log_operation` function to ensure it correctly logs messages.
+
+### `test_sync.py`
+
+Tests the folder synchronization functionality.
+
+- **Functions**:
+  - `setup_test_environment()`: Sets up a test environment with source and replica directories, and initializes test files.
+  - `test_synchronization()`: Tests the `synchronize_folders` function by checking creation, updating, and deletion of files and directories.
+
+### `test_utils.py`
+
+Tests the utility function for calculating the MD5 hash of a file.
+
+- **Functions**:
+  - `calculate_md5(file_path, chunk_size=4096)`: Calculates the MD5 hash of a file.
+  - `setup_file_environment()`: Creates a temporary test file for MD5 hash calculation.
+  - `test_calculate_md5()`: Tests the `calculate_md5` function to ensure it correctly calculates the MD5 hash of the test file.
 
 ## Features
 
@@ -87,3 +108,36 @@ Manages command-line arguments, logging setup, and starts the synchronization pr
 - Configurable synchronization interval.
 - Displays help and version information via command-line options.
 - Handles errors for missing directories and provides user-friendly messages.
+- Provides MD5 hash calculation for file integrity checks.
+
+## Running Tests
+
+To run the tests, you can use the `pytest` framework. Below are the commands to run individual test files:
+
+- To run the logger tests:
+  ```
+  pytest -s tests/test_logger.py
+  ```
+- To run the synchronization tests:
+  ```
+  pytest -s tests/test_sync.py
+  ```
+- To run the MD5 utility tests:
+  ```
+  pytest -s tests/test_utils.py
+  ```
+## TODO
+
+- [ ] Add unit tests for synchronization functions.
+- [ ] Implement exclusion filters for specific files or directories.
+- [ ] Add option for one-way or two-way synchronization.
+- [ ] Enhance logging details with more specific operation messages.
+- [ ] Provide a graphical user interface (GUI) for easier usage.
+
+## DONE
+
+- [x] Implement basic folder synchronization.
+- [x] Set up logging configuration.
+- [x] Calculate MD5 hash for file integrity.
+- [x] Handle file and directory creation, updating, and deletion.
+- [x] Parse command-line arguments for source, replica, and interval.
