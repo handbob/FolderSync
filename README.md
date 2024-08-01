@@ -59,3 +59,10 @@ Sets up logging configurations and provides a function to log operations.
 - **Functions**:
   - `setup_logging(log_file)`: Sets up the logging configuration.
   - `log_operation(message)`: Logs a message with INFO level.
+
+### `sync.py`
+
+Contains the core logic for synchronizing the source and replica folders.
+
+- **Functions**:
+  - `synchronize_folders(source, replica)`: Synchronizes the contents of the source folder with the replica folder.
