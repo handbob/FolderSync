@@ -1,6 +1,6 @@
-import os  # Importing the os module to interact with the operating system
-import shutil  # Importing shutil for file operations
-from pyfoldersync.logger import log_operation  # Importing log_operation from the pyfoldersync.logger module
+import os
+import shutil
+from pyfoldersync.logger import log_operation
 
 
 def synchronize_folders(source, replica):

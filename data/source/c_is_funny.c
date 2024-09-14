@@ -24,7 +24,7 @@ int main(int argc, const char **argv)
     free(mySuperType);
     mySuperType = NULL;
 
-    printf("pointer of address is deallocate :D :%p\n", mySuperType);
+    printf("pointer of address is deallocate :D :%p\n", mySuperType)
     
     return 0;
 }

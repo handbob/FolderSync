@@ -1,5 +1,5 @@
-from loguru import logger  # Importing logger from the loguru library for logging
-import sys  # Importing sys module to interact with the interpreter
+from loguru import logger
+import sys
 
 
 def setup_logging(log_file):
