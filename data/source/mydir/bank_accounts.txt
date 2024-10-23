@@ -1,3 +1,0 @@
-User_name: QA Tester DEV
-Password: very_strong_password_123
-
