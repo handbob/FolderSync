@@ -1,13 +1,11 @@
-import os  # Importing os module for interacting with the operating system
-import time  # Importing time module to manage synchronization intervals
-from datetime import datetime  # Importing datetime to generate timestamped log filenames
-from sys import argv  # Importing argv from sys for command-line argument parsing
-from pyfoldersync.sync import synchronize_folders  # Importing the synchronize_folders function
-from pyfoldersync.logger import setup_logging, log_operation  # Importing the setup_logging function and
-# log_operation function
+import os
+import time
+from datetime import datetime
+from sys import argv
+from pyfoldersync.sync import synchronize_folders
+from pyfoldersync.logger import setup_logging, log_operation
 
 VERSION = '1.0.0'
-
 
 def print_help():
     help_message = """usage: python main.py [options]
